@@ -34,7 +34,7 @@ const transporter= nodemailer.createTransport({
 // Configure CORS
 
 app.use(cors({
-  origin: "https://your-frontend.vercel.app",
+  origin: "https://porfolio-2025-frontend.vercel.app/",
   methods: "GET,POST,PUT,DELETE",
   allowedHeaders: "Content-Type,Authorization"
 }));
