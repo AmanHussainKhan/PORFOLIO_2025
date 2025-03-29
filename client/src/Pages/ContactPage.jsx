@@ -80,7 +80,7 @@ function ContactPage() {
           validationSchema={validationSchema}
           onSubmit={async(values, { setSubmitting, resetForm }) => {
             try {
-              const response = await axios.post("porfolio-2025-backend.vercel.app/api/contact", values);
+              const response = await axios.post("https://porfolio-2025-backend.vercel.app/api/contact", values);
               alert("Message sent successfully!");
               resetForm();
             } catch (error) {
