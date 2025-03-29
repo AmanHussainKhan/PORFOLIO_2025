@@ -10,7 +10,6 @@ dotenv.config({ path: "./config/config.env" });
 const app = express();
 const PORT = process.env.PORT || 3001;
 const PASSWORD = process.env.EMAIL_PASS
-
 // email functionality
 const transporter= nodemailer.createTransport({
   secure:true,
@@ -34,7 +33,12 @@ const transporter= nodemailer.createTransport({
 
 // Configure CORS
 
-app.use(cors());
+app.use(cors({
+  origin: "https://your-frontend.vercel.app",
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type,Authorization"
+}));
+
 app.use(express.json());
 
 // Email route
@@ -97,7 +101,7 @@ app.post("/api/ai-chat", async (req, res) => {
 });
 
 app.get('/',(req,res)=>{
-    res.json({message:"Backend is running."});
+    res.json({message:"Backend is running..."});
 })
 
 // Start server
