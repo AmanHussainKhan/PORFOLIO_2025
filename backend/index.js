@@ -67,14 +67,14 @@ app.post("/api/contact", async (req, res) => {
 
 
 // Contact form API
-app.post("/api/contact", (req, res) => {
-  const { name, email, message } = req.body;
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: "All fields are required" });
-  }
-  console.log("Received message:", req.body);
-  res.json({ success: true, message: "Message sent successfully!" });
-});
+// app.post("/api/contact", (req, res) => {
+//   const { name, email, message } = req.body;
+//   if (!name || !email || !message) {
+//     return res.status(400).json({ error: "All fields are required" });
+//   }
+//   console.log("Received message:", req.body);
+//   res.json({ success: true, message: "Message sent successfully!" });
+// });
 
 // Initialize AI
 const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GENAI_API_KEY });
