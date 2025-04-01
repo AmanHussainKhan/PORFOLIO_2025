@@ -14,7 +14,7 @@ export default function HomePage() {
 
   useEffect(() => {
     axios
-      .get("https://porfolio-2025-backend.vercel.app/")
+      .get("http://localhost:8080")
       .then((res) => {
         setBackendStatus(res.data.message);
       })
@@ -139,6 +139,8 @@ export default function HomePage() {
                   value={message}
                   onChange={(e) => {
                     setMessage(e.target.value);
+                    alert("this AI feature is under development")
+                    setMessage("")
                   }}
                   placeholder="write your message here..."
                   className="border p-2 w-full min-h-[100px]"
@@ -147,7 +149,7 @@ export default function HomePage() {
                   ""
                 ) : (
                   <div className="absolute bottom-4 right-3">
-                    <span className="cursor-pointer">
+                    <span className="cursor-pointer" onClick={()=>{handleAI}}>
                       <MdSend size={24} />
                     </span>
                   </div>

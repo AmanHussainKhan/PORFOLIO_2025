@@ -33,12 +33,12 @@ const transporter= nodemailer.createTransport({
 
 // Configure CORS
 
-app.use(cors({
-  origin: "https://porfolio-2025-frontend.vercel.app",
-  methods: "GET,POST,PUT,DELETE",
-  allowedHeaders: "Content-Type,Authorization"
-}));
-
+// app.use(cors({
+//   origin: "",
+//   methods: "GET,POST,PUT,DELETE",
+//   allowedHeaders: "Content-Type,Authorization"
+// }));
+app.use(cors());  
 app.use(express.json());
 
 // Email route
