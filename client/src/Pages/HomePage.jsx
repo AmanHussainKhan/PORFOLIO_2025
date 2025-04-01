@@ -15,7 +15,7 @@ export default function HomePage() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8080')
+      .get("http://localhost:8080")
       .then((res) => {
         setBackendStatus(res.data.message);
       })
