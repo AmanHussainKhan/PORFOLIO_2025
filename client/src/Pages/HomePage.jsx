@@ -14,7 +14,7 @@ export default function HomePage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080")
+      .get("https://porfolio-2025-backend.vercel.app")
       .then((res) => {
         setBackendStatus(res.data.message);
       })
