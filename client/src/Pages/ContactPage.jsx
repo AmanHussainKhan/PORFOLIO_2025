@@ -104,7 +104,7 @@ function ContactPage() {
               setLoading(true);
               try {
                 const response = await axios.post(
-                  "http://localhost:8080/api/contact",
+                  "https://porfolio-2025-backend.vercel.app/api/contact",
                   values
                 );
                 setLoading(false);
