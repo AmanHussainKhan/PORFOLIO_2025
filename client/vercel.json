@@ -1,0 +1,3 @@
+{
+  "reqwrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}

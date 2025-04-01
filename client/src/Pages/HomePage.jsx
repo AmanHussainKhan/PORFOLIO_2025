@@ -12,9 +12,10 @@ export default function HomePage() {
     return Number(localStorage.getItem("visitorCount")) || 1;
   });
 
+
   useEffect(() => {
     axios
-      .get("http://localhost:8080")
+      .get('http://localhost:8080')
       .then((res) => {
         setBackendStatus(res.data.message);
       })
