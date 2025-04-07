@@ -3,7 +3,10 @@ import { motion } from "framer-motion";
 import mypic from ".././myPic.png";
 import resume from "/AHK.pdf";
 
-function AboutPage() {
+function AboutPage({setPage}) {
+  const handlePageChange = ()=>{
+    setPage("contact");
+  }
   return (
     <div>
       <div className="flex flex-col gap-6 items-center mt-6 ">
@@ -89,12 +92,17 @@ function AboutPage() {
             Campus
           </p>
           <p>PCM, Delhi Public School, Balco.</p>
+          <div className="flex">
 
           <a href={resume} download="Aman_Hussain_Khan_Resume.pdf">
             <button className="px-4 py-2 bg-[#D4D4D4] text-[#121212] font-semibold rounded-md hover:bg-[#61AFEF] transition-all duration-300 mt-4 w-[100px]">
               resume
             </button>
           </a>
+          <p className="mt-5 ml-2">*for updated resume request 
+            <span className="underline text-blue-700 ml-3 cursor-pointer" onClick={handlePageChange}>here</span> in contact form.
+            </p>
+          </div>
         </div>
       </div>
     </div>

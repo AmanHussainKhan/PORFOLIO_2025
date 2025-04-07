@@ -6,8 +6,7 @@ import AboutPage from "./Pages/AboutPage";
 import ContactPage from "./Pages/ContactPage";
 import ProjectPage from "./Pages/ProjectPage";
 import StarryBackground from "./Features/StarryBackground";
-import Test from './Pages/Test'
-import AskMePage from './Pages/AskMePage';
+import ExplorePage from './Pages/ExplorePage';
 
 function AppJSX() {
       const [page, setPage] = useState("home");
@@ -37,9 +36,9 @@ function AppJSX() {
       
       <button
         className="px-4 py-1 transition-all duration-300 cursor-pointer hover:bg-[#4CAF50] hover:text-[#121212] rounded"
-        onClick={() => setPage("blog")}
+        onClick={() => setPage("explore")}
       >
-        Blog
+        Explore
       </button>
       <button
         className="px-4 py-1 transition-all duration-300 cursor-pointer hover:bg-[#4CAF50] hover:text-[#121212] rounded"
@@ -51,8 +50,8 @@ function AppJSX() {
     {/* <div className="w-4/5 border-2 border-[#4CAF50] bg-[#1E1E1E] p-5 shadow-2xl max-w-4xl rounded"> */}
     <div>
       {page === "home" && <HomePage />}
-      {page === "blog" && <BlogPage />}
-      {page === "about" && <AboutPage/>}
+      {page === "explore" && <ExplorePage/>}
+      {page === "about" && <AboutPage setPage={setPage}/>}
       {page === "projects" && <ProjectPage/>}
       {page === "contact" && <ContactPage/>}
     </div>
