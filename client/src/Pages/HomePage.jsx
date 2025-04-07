@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import lp from "../assets/lp.jpg";
+// import lp from "../assets/lp.jpg";
 import resume from "/AHK.pdf";
 import { MdSend } from "react-icons/md";
 import axios from "axios";
@@ -78,11 +78,11 @@ export default function HomePage() {
           <div className="bg-[#1E1E1E] p-5 shadow-2xl rounded">
             <h2 className="text-3xl font-bold border-b-2 pb-2">Recent Blog</h2>
             <div className="mt-5 flex gap-4 items-center">
-              <img
+              {/* <img
                 src={lp}
                 alt="Blog"
                 className="w-32 h-32 rounded object-cover"
-              />
+              /> */}
               <div>
                 <h3 className="text-xl font-semibold">
                   Exploring the Future of Tech

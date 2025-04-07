@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import mypic from ".././myPic.png";
+// import mypic from ".././myPic.png";
 import resume from "/AHK.pdf";
 
 function AboutPage({setPage}) {
@@ -10,14 +10,14 @@ function AboutPage({setPage}) {
   return (
     <div>
       <div className="flex flex-col gap-6 items-center mt-6 ">
-        <motion.img
+        {/* <motion.img
           src={mypic}
           alt="Aman Hussain Khan"
           className="border-2 border-[#4CAF50] w-1/4 rounded shadow-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-        />
+        /> */}
         <div className="flex-1 text-left">
           <h2 className="text-2xl font-semibold border-b-2 border-[#4CAF50] pb-2">
             About Me
