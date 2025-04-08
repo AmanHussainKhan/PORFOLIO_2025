@@ -3,9 +3,8 @@ import StarryBackground from "../Features/StarryBackground";
 import { MdSend } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: "YOUR_API_KEY" }); // Initialize once
+// const ai = new GoogleGenAI({ apiKey: "YOUR_API_KEY" }); // Initialize once
 
 function AskMePage() {
   const [message, setMessage] = useState("");
@@ -22,21 +21,21 @@ function AskMePage() {
     setMessage("");
     setLoading(true);
 
-    try {
-      // AI response
-      const response = await ai.models.generateContent({
-        model: "gemini-2.0-flash",
-        contents: [{ role: "user", parts: [{ text: message }] }],
-      });
+    // try {
+    //   // AI response
+    //   const response = await ai.models.generateContent({
+    //     model: "gemini-2.0-flash",
+    //     contents: [{ role: "user", parts: [{ text: message }] }],
+    //   });
 
-      const aiReply = response?.text || "Sorry, I couldn't understand that. 🤖";
+    //   const aiReply = response?.text || "Sorry, I couldn't understand that. 🤖";
 
-      // Add AI response to messages
-      setMessages([...newMessages, { sender: "ai", text: aiReply }]);
-    } catch (error) {
-      console.error("AI Error:", error);
-      setMessages([...newMessages, { sender: "ai", text: "Error getting response." }]);
-    }
+    //   // Add AI response to messages
+    //   setMessages([...newMessages, { sender: "ai", text: aiReply }]);
+    // } catch (error) {
+    //   console.error("AI Error:", error);
+    //   setMessages([...newMessages, { sender: "ai", text: "Error getting response." }]);
+    // }
 
     setLoading(false);
   };
