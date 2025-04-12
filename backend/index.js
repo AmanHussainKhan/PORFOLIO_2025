@@ -38,7 +38,11 @@ const transporter= nodemailer.createTransport({
 //   methods: "GET,POST,PUT,DELETE",
 //   allowedHeaders: "Content-Type,Authorization"
 // }));
-app.use(cors());  
+app.use(cors({
+  origin: process.env.FRONTEND_URL,
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Email route

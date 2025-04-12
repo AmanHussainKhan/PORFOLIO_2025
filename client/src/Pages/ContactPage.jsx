@@ -7,6 +7,8 @@ import { ThreeDots } from "react-loader-spinner";
 
 function ContactPage() {
   //
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const [loading, setLoading] = useState(false);
   const [loading1, setLoading1] = useState(true);
 
@@ -104,7 +106,7 @@ function ContactPage() {
               setLoading(true);
               try {
                 const response = await axios.post(
-                  "http://localhost:8080/api/contact",
+                  `${apiUrl}/api/contact`,
                   values
                 );
                 setLoading(false);

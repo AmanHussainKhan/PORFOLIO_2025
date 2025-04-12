@@ -6,6 +6,7 @@ import { MdSend } from "react-icons/md";
 import axios from "axios";
 
 export default function HomePage() {
+  const apiUrl = import.meta.env.VITE_API_URL;
   const [backendStatus, setBackendStatus] = useState("Checking backend...");
   const [dateTime, setDateTime] = useState(new Date());
   const [visitors, setVisitors] = useState(() => {
@@ -13,9 +14,17 @@ export default function HomePage() {
   });
 
 
+
+  // useEffect(()=>{
+  //   console.log("API URL:", apiUrl);
+  //   console.log(import.meta.env);
+
+  // },[])
+
+
   useEffect(() => {
     axios
-      .get("http://localhost:8080")
+      .get(apiUrl)
       .then((res) => {
         setBackendStatus(res.data.message);
       })
