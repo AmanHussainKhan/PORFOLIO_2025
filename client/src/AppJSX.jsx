@@ -12,11 +12,11 @@ function AppJSX() {
       const [page, setPage] = useState("home");
     
   return (
-    <div className="bg-[#121212] text-[#D4D4D4] font-mono text-center p-5 min-h-screen flex flex-col items-center">
+    <div className="bg-[#121212] h-full text-[#D4D4D4] font-mono text-center p-5 min-h-screen flex flex-col items-center w-full overflow-x-hidden">
     <StarryBackground/>
-    <nav className="w-full bg-[#1E1E1E] text-[#D4D4D4] p-3 border-b-2 border-[#4CAF50] mb-5 flex justify-around shadow-lg">
+    <nav className="w-full text-xs sm:text-sm md:text-base lg:text-xl	 bg-[#1E1E1E] text-[#D4D4D4] p-3 border-b-2 border-[#4CAF50] mb-5 flex flex-wrap justify-around shadow-lg">
       <button
-        className="px-4 py-1 transition-all duration-300 hover:bg-[#4CAF50] cursor-pointer hover:text-[#121212] rounded"
+        className="px-4 transition-all duration-300 hover:bg-[#4CAF50] cursor-pointer hover:text-[#121212] rounded"
         onClick={() => setPage("home")}
       >
         Home
@@ -34,12 +34,12 @@ function AppJSX() {
         Projects
       </button>
       
-      <button
+      {/* <button
         className="px-4 py-1 transition-all duration-300 cursor-pointer hover:bg-[#4CAF50] hover:text-[#121212] rounded"
         onClick={() => setPage("explore")}
       >
         Explore
-      </button>
+      </button> */}
       <button
         className="px-4 py-1 transition-all duration-300 cursor-pointer hover:bg-[#4CAF50] hover:text-[#121212] rounded"
         onClick={() => setPage("contact")}
@@ -49,7 +49,7 @@ function AppJSX() {
     </nav>
     {/* <div className="w-4/5 border-2 border-[#4CAF50] bg-[#1E1E1E] p-5 shadow-2xl max-w-4xl rounded"> */}
     <div>
-      {page === "home" && <HomePage />}
+      {page === "home" && <HomePage setPage={setPage} />}
       {page === "explore" && <ExplorePage/>}
       {page === "about" && <AboutPage setPage={setPage}/>}
       {page === "projects" && <ProjectPage/>}
