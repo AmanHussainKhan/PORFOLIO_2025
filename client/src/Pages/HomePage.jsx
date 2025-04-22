@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Link} from 'react-router-dom';
 import { motion } from "framer-motion";
 // import lp from "../assets/lp.jpg";
 import resume from "/AHK.pdf";
@@ -99,9 +100,9 @@ export default function HomePage({ setPage }) {
                 <h3 className="text-xl font-semibold">
                   Connect and help me code cools things.
                 </h3>
-                <a href="/blog/latest" className="text-yellow-500 text-2xl hover:underline mt-2 block">
-                  join →
-                </a>
+               <Link></Link> <p href="/blog/latest" className="text-yellow-500 text-2xl hover:underline mt-2 block">
+                  join now →
+                </p>
               </div>
             </div>
           </div>

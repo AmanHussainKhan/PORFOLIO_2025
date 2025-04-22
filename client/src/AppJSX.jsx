@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import HomePage from "./Pages/HomePage";
-import BlogPage from "./Pages/BlogPage";
 import AboutPage from "./Pages/AboutPage";
 import ContactPage from "./Pages/ContactPage";
 import ProjectPage from "./Pages/ProjectPage";

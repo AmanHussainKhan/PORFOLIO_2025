@@ -3,14 +3,20 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AppJSX from "./AppJSX";
 import AskMePage from "./Pages/AskMePage";
 import Test from "./Pages/Test";
-import BlogPage from './Pages/BlogPage';
+import MyCommunity from './Pages/MyCommunity';
+import CommunityHomePage from './Pages/CommunityHomePage';
+import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AppJSX />} />
-        <Route path="/blog" element={<BlogPage />} />
+        <Route element={<ProtectedRoute />} >
+        <Route path="/communityhomepage" element={<CommunityHomePage />} />
+
+        </Route>
+        <Route path="/community" element={<MyCommunity />} />
         <Route path="/test" element={<Test />} />
       </Routes>
     </BrowserRouter>
