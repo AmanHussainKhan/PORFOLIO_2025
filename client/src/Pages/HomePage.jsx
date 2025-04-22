@@ -100,9 +100,11 @@ export default function HomePage({ setPage }) {
                 <h3 className="text-xl font-semibold">
                   Connect and help me code cools things.
                 </h3>
-               <Link></Link> <p href="/blog/latest" className="text-yellow-500 text-2xl hover:underline mt-2 block">
+               <Link to='/community'>
+               <p className="text-yellow-500 text-2xl hover:underline mt-2 block">
                   join now →
                 </p>
+               </Link> 
               </div>
             </div>
           </div>

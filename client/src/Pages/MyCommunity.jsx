@@ -201,7 +201,7 @@ function MyCommunity() {
                 className="mt-2 text-blue-300 hover:underline cursor-pointer"
                 onClick={toggleLoginState}
               >
-                don't have account?
+                have account login!
               </p>
             </form>
           )}
