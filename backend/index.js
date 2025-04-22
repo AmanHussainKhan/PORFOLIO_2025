@@ -14,7 +14,10 @@ dotenv.config({ path: "./config/config.env" });
 
 
 const SecretKey = process.env.JWT_SECRET;
-console.log(SecretKey)
+if (!SecretKey) {
+  console.error("Missing JWT_SECRET in environment variables!");
+  process.exit(1); // Prevent server from starting
+}
 
 
 const app = express();
@@ -44,7 +47,6 @@ app.post("/api/contact", async (req, res) => {
   if (!name || !email || !message) {
     return res.status(400).json({ error: "All fields are required" });
   }
-
   try {
     await transporter.sendMail({
       to: "amanhussainkhan3@gmail.com",
@@ -60,30 +62,6 @@ app.post("/api/contact", async (req, res) => {
     res.status(500).json({ error: "Failed to send email" });
   }
 });
-
-// Initialize AI
-const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GENAI_API_KEY });
-
-// AI Chatbot API
-// app.post("/api/ai-chat", async (req, res) => {
-//   const { message } = req.body;
-//   if (!message) {
-//     return res.status(400).json({ error: "Message is required" });
-//   }
-
-//   try {
-//     const response = await ai.models.generateContent({
-//       model: "gemini-2.0-flash",
-//       contents: [{ role: "user", parts: [{ text: message }] }],
-//     });
-
-//     const aiReply = response?.text || "Sorry, I couldn't understand that. 🤖";
-//     res.json({ success: true, reply: aiReply });
-//   } catch (error) {
-//     console.error("AI Chat Error:", error);
-//     res.status(500).json({ error: "Failed to get AI response" });
-//   }
-// });
 
 app.get('/',(req,res)=>{
     res.json({message:"Backend is running..."});
@@ -134,7 +112,7 @@ app.post('/community/register',async(req,res)=>{
      try {
       const {Username,Email,Password} =req.body;
       if(!Username || !Email || !Password){
-        res.status(400).json({success:false,message:"Missing credentials"})       
+       return res.status(400).json({success:false,message:"Missing credentials"})       
       }
       const isUserExist = await RegisterUser.findOne({Email});
        if(isUserExist){
@@ -155,8 +133,11 @@ app.post('/community/user/profile',async(req,res)=>{
       const token = req.headers.authorization.split(' ')[1]
       if(!token) return res.status(200).json({success:false,message:"Access Denied",data:token})
 
-        jwt.verify(token,SecretKey, async(err,decode)=>{
-          const user = await RegisterUser.findById(decode?.id)
+        jwt.verify(token,SecretKey, async(err,decoded)=>{
+          const user = await RegisterUser.findById(decoded?.id);
+          if (err) {
+            return res.status(401).json({ success: false, message: "Invalid or expired token" });
+          }
           const userData = {
             id:user?.id,
             name:user?.Username,
