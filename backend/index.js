@@ -7,6 +7,8 @@ import bcrypt from 'bcrypt';
 import { GoogleGenAI } from "@google/genai";
 import nodemailer from "nodemailer";
 import RegisterUser from './Model/CommunityUsers.js';
+import serverless from 'serverless-http';
+
 
 dotenv.config({ path: "./config/config.env" });
 
@@ -164,4 +166,8 @@ mongoose.connect(process.env.MONGO_DB_URI)
 }).catch((error)=>{
   console.log(error,"error connecting db and server")
 })
+
+
+export default serverless(app);
+
 
