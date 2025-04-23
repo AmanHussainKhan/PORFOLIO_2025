@@ -101,11 +101,13 @@ function MyCommunity() {
       } else {
         toast.error(data.message);
         setLoading(false);
+        setLoginForm({ Username: "", Password: "" });
       }
     } catch (error) {
       console.error(" Login error:", error);
       setLoading(false);
       toast.error("Something went wrong. Please try again.");
+      setLoginForm({ Username: "", Password: "" });
     }
   };
 

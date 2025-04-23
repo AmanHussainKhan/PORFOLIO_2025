@@ -7,8 +7,8 @@ const projects = [
     link: "https://ai-image-enhancer-alpha.vercel.app",
   },
   {
-    title: "Blog Website with User Authentication",
-    link: "https://yourblogwebsite.com",
+    title: "Multi Language Code Editor-IDE",
+    link: "https://multi-code-ide-frontend.vercel.app/login",
   },
   {
     title: "Javascript code reviewer using AI",
