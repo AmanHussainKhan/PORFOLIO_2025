@@ -3,20 +3,21 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "Real-time Chat Application",
+    link: "https://chat-app-2025-socket-io.vercel.app/login",
+  },
+  {
     title: "Image Enhancer using AI",
     link: "https://ai-image-enhancer-alpha.vercel.app",
   },
   {
     title: "Multi Language Code Editor-IDE",
     link: "https://multi-code-ide-frontend.vercel.app/login",
+    
   },
   {
     title: "Javascript code reviewer using AI",
     link: "https://ai-code-reviewer-frontend-steel.vercel.app",
-  },
-  {
-    title: "Rent a Hotel Website",
-    link: "https://rental-brown.vercel.app",
   },
   {
     title: "Restaurant seat resevation website",
