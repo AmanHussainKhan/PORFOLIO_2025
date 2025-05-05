@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "Real-time Chat Application",
-    link: "https://chat-app-2025-socket-io.vercel.app/login",
+    link: "https://chatapp-2025-socket-io.onrender.com",
   },
   {
     title: "Image Enhancer using AI",
@@ -13,7 +13,6 @@ const projects = [
   {
     title: "Multi Language Code Editor-IDE",
     link: "https://multi-code-ide-frontend.vercel.app/login",
-    
   },
   {
     title: "Javascript code reviewer using AI",

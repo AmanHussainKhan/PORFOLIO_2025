@@ -86,7 +86,7 @@ export default function HomePage({ setPage }) {
           </div>
 
           {/* Recent Blog */}
-          <div className="bg-[#1E1E1E] p-5 shadow-2xl rounded">
+          <div className="p-5 shadow-2xl border rounded">
             <h2 className="text-3xl font-bold border-b-2 pb-2">
               Join Community
             </h2>
@@ -101,7 +101,7 @@ export default function HomePage({ setPage }) {
                   Connect and help me code cools things.
                 </h3>
                <Link to='/community'>
-               <p className="text-yellow-500 text-2xl hover:underline mt-2 block">
+               <p className="text-yellow-500 border rounded py-3 text-2xl hover:underline mt-2 block">
                   join now →
                 </p>
                </Link> 

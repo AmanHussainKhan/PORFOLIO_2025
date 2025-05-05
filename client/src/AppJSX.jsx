@@ -13,7 +13,7 @@ function AppJSX() {
   return (
     <div className="bg-[#121212] h-full text-[#D4D4D4] font-mono text-center p-5 min-h-screen flex flex-col items-center w-full overflow-x-hidden">
     <StarryBackground/>
-    <nav className="w-full text-xs sm:text-sm md:text-base lg:text-xl	 bg-[#1E1E1E] text-[#D4D4D4] p-3 border-b-2 border-[#4CAF50] mb-5 flex flex-wrap justify-around shadow-lg">
+    <nav className="w-full text-sm sm:text-sm md:text-base lg:text-xl	 bg-[#1E1E1E] text-[#D4D4D4] p-3 border-b-2 border-[#4CAF50] mb-5 flex flex-wrap justify-around shadow-lg">
       <button
         className="px-4 transition-all duration-300 hover:bg-[#4CAF50] cursor-pointer hover:text-[#121212] rounded"
         onClick={() => setPage("home")}
