@@ -1,26 +1,30 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaGithubSquare } from "react-icons/fa";
 
 const projects = [
   {
     title: "Real-time Chat Application",
     link: "https://chatapp-2025-socket-io.onrender.com",
+    status: "live",
   },
   {
     title: "Image Enhancer using AI",
     link: "https://ai-image-enhancer-alpha.vercel.app",
+    status: "live",
   },
   {
-    title: "Multi Language Code Editor-IDE",
-    link: "https://multi-code-ide-frontend.vercel.app/login",
+    title: "Modern Fitness Planner App ( Vue.js )",
+    link: "https://github.com/AmanHussainKhan/ide",
   },
   {
     title: "Javascript code reviewer using AI",
-    link: "https://ai-code-reviewer-frontend-steel.vercel.app",
+    link: "https://js-ai-code-reviewer-2025-frontend.vercel.app",
+    status:"live"
   },
   {
-    title: "Restaurant seat resevation website",
-    link: "https://restaurant-seat-app.vercel.app",
+    title: "Job Seeking Application",
+    link: "https://job-seeking-app-2025-frontend.vercel.app",
   },
   {
     title: "Landing page Project for a Company",
@@ -49,9 +53,18 @@ export default function ProjectPage() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-[#4CAF50] text-[#121212] p-4 border-2 border-[#D4D4D4] hover:bg-[#1E1E1E] hover:text-[#D4D4D4] rounded-md transition-all shadow-md"
+              className="block relative bg-[#4CAF50] text-[#121212] p-4 border-2 border-[#D4D4D4] hover:bg-[#1E1E1E] hover:text-[#D4D4D4] rounded-md transition-all shadow-md"
             >
               {project.title}
+              {project.status === "live" ? (
+                <div className="absolute top-0 right-0 bg-red-500 text-white text-xs px-2 py-0.2 rounded">
+                  live
+                </div>
+              ) : (
+                <div className="absolute top-0 right-0 text-gray-800 text-xl px-2 py-1 rounded">
+                  <FaGithubSquare />
+                </div>
+              )}
             </a>
           ))}
         </div>
