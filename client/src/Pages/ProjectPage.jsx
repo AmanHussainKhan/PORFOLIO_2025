@@ -24,7 +24,7 @@ const projects = [
   },
   {
     title: "Job Seeking Application",
-    link: "https://job-seeking-app-2025-frontend.vercel.app",
+    link: "https://github.com/AmanHussainKhan/JobSeeking-App-2025",
   },
   {
     title: "Landing page Project for a Company",
