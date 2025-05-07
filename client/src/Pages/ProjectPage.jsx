@@ -14,17 +14,17 @@ const projects = [
     status: "live",
   },
   {
-    title: "Modern Fitness Planner App ( Vue.js )",
-    link: "https://github.com/AmanHussainKhan/ide",
+    title: "Workout Planner (Vue.js)",
+    link: "https://workout-planner-vuejs.vercel.app",
   },
   {
     title: "Javascript code reviewer using AI",
     link: "https://js-ai-code-reviewer-2025-frontend.vercel.app",
-    status:"live"
+    status: "live",
   },
   {
     title: "Job Seeking Application",
-    link: "https://github.com/AmanHussainKhan/JobSeeking-App-2025",
+    link: "https://github.com/AmanHussainKhan/jobSeeking2025",
   },
   {
     title: "Landing page Project for a Company",
